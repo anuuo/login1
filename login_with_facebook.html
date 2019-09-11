@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>Color Button</title>
+        <style>
+            body {
+                background-color:rosybrown;
+            }
+            h1 {
+                color:paleturquoise;
+                font-size: 70px;
+                text-align: center;
+                -webkit-animation: ease-out;
+
+            }
+            .image1 {
+                position:absolute;
+                top: 320px;
+                left: 1200px;
+                width: 300px;
+                height:200px;
+            }
+            .image2 {
+                position:absolute;
+                top: 300px;
+                left: 750px;
+                width: 245px;
+                height:250px;
+            }
+            .image3 {
+                position:absolute;
+                top: 300px;
+                left:300px;
+                width:245px;
+                height: 250px;
+            }
+            
+            canvas {
+                position:absolute;
+                top: 700px;
+                left: 700px;
+                width: 500px;
+                height: 320px;
+                background-color:ghostwhite
+                
+            }
+            #strawberry{
+               color: #e74c3c;
+            }
+            #blueberry {
+                color: #3498db;
+            }
+            #apple{
+                color: #2ecc71;
+            }
+
+        </style>
+    </head>
+    <body>
+        <script>
+            function statusChangeCallback(response) {
+                console.log('statusChangeCallback');
+                console.log(response);
+                if (response.status === 'connected') {
+                    testAPI();
+                } else {
+                    document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+                }
+            }
+            function checkLoginState() {
+                FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                });
+            }
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '493389101424781',
+                    cookie     : true,  
+                    xfbml      : true,  
+                    version    : 'v4.0'
+                });
+                FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                });
+            };
+            (function(d,s,id) {
+                var js, fjs = d.getElementByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            function testAPI() {
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function(response) {
+                    console.log('Successful login for: ' + response.name);
+                    document.getElementById('status').innerHTML =
+                        'Thanks for logging in, ' + response.name + '!';
+                });
+            }
+        </script>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+        <div id="status">
+        </div>
+        <h1> Fruit Color</h1>
+        <div>
+            <input onclick="changecolor('blueberry')" name="blueberry" type="Image" class="image1" src="https://cdn.clipart.email/da7f98926f9107048e03066119e7c82a_home_376-289.png" alt="strawberry" >
+            <input onclick="changecolor('apple')" name="apple" type="Image"class ="image2" src="https://cdn.clipart.email/8211589adf10b53e8fed3587d50b67de_image-smoothie-smash-green-applepng-club-penguin-wiki-_649-766.png" alt="apple">
+            <input onclick="changecolor('strawberry')" name="strawberry" type="Image" class ="image3" src="https://pngimage.net/wp-content/uploads/2018/06/strawberry-cartoon-png-4.png" alt="strawberry" >
+        <div>
+        <canvas id="rectangle"></canvas>
+
+        <script type="text/javascript">
+                    function changecolor(name) {
+                        var elem = document.getElementById('rectangle');
+                        console.log("here, ", name);
+                        if(name === 'blueberry') {
+                            elem.style.backgroundColor = '#3498db';
+                        }
+                        if (name ==='apple') {
+                            elem.style.backgroundColor = '#2ecc71';
+                        }
+                        if (name ==='strawberry') {
+                            elem.style.backgroundColor = '#e74c3c';
+                        }
+                        }
+        </script>
+        </div>
+</div>
+</body>
+</html>

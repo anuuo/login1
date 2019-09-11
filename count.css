@@ -1,0 +1,83 @@
+#center_buttons { 
+    display: flex; 
+    justify-content: center; 
+}
+#button{
+        background-color : rgb(168, 80, 134);
+        color: whitesmoke;
+        font-size: 30vw;
+        width: 40px;
+        height: 40px;
+    }
+#count{
+    color: whitesmoke;
+    font-size: 30px;
+    height: 40px;
+    background-image: url(galaxy.jpg);
+}
+.print{
+    font-size: 25vw;
+    font-family: "times roman";
+}
+#main{
+    border-radius: 20px;
+    background-image :url(galaxy.jpg);
+    position: relative;
+    background-size: 100%;
+    color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', Arial, serif;
+    text-align: center;
+    
+}
+#main_img{
+    border-radius: 50%;
+    width: 25%;
+    border-image: url(anu1.jpg) 30 round;
+    border: double 7px transparent;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #87CEFA,#F08080);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+}
+.clearfix{
+    overflow: auto;
+}
+#sub{
+    background-image: url(galaxy.jpg);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; 
+    text-align: center;
+    background-size: 160%;
+    background-repeat: 2;
+}
+
+#quotes{
+    text-align: center;
+    font-size: 100%; 
+    color: whitesmoke; 
+}
+
+#nest{
+    float: left; 
+    width: 20%;
+    border-radius: 50% ;
+    padding : 10px;
+}
+
+#social{
+    border-radius: 50%;
+    width: 7vw;
+}
+
+#social_media{
+
+    padding: 30px;
+    display : inline-block;
+    justify-content: center;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
