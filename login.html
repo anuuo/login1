@@ -14,7 +14,10 @@
       xfbml      : true,
       version    : '{740619863055250}'
     });
-      
+      function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
     FB.AppEvents.logPageView();   
       
   };
@@ -27,9 +30,9 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
     
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
+// FB.getLoginStatus(function(response) {
+//     statusChangeCallback(response);
+// });
 </script>
  
   <script>
